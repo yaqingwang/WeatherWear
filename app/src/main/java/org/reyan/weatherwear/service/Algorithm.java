@@ -1,7 +1,6 @@
 package org.reyan.weatherwear.service;
 
 import org.reyan.weatherwear.domain.Dressing;
-import org.reyan.weatherwear.domain.Setting;
 import org.reyan.weatherwear.domain.Weather;
 
 /**
@@ -9,7 +8,7 @@ import org.reyan.weatherwear.domain.Weather;
  */
 public class Algorithm {
 
-    public static void dress(Setting setting, Weather weather, Dressing dressing) {
+    public static void dress(Weather weather, Dressing dressing) {
         // update dressing based on setting and weather
     }
 

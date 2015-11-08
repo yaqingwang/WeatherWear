@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="specify_location"
+        android:title="@string/pref_title_specify_location"
+        android:defaultValue="false" />
+
+    <Preference
+        android:dependency="specify_location"
+        android:key="location"
+        android:defaultValue="5391811@San Diego, US">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="org.reyan.weatherwear"
+            android:targetClass="org.reyan.weatherwear.activity.SearchableActivity"/>
+    </Preference>
+
+</PreferenceScreen>

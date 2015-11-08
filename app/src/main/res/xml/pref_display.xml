@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="temperature"
+        android:title="@string/pref_title_temperature"
+        android:summary="Celsius/Fahrenheit"
+        android:defaultValue="true"
+        android:switchTextOn="  \u2109  "
+        android:switchTextOff="  \u2103  " />
+
+    <SwitchPreference
+        android:key="wind_speed"
+        android:title="@string/pref_title_wind_speed"
+        android:summary="Meter per second/Miles per hour"
+        android:defaultValue="true"
+        android:switchTextOn="mph"
+        android:switchTextOff="mps"/>
+
+</PreferenceScreen>
