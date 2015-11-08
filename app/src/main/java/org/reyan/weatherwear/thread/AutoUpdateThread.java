@@ -1,12 +1,9 @@
 package org.reyan.weatherwear.thread;
 
-import android.os.Handler;
+import android.util.Log;
 
-import org.reyan.weatherwear.domain.Dressing;
-import org.reyan.weatherwear.domain.Setting;
-import org.reyan.weatherwear.domain.Weather;
-import org.reyan.weatherwear.service.UpdateService;
 import org.reyan.weatherwear.activity.MainActivity;
+import org.reyan.weatherwear.service.UpdateService;
 
 /**
  * Created by reyan on 11/4/15.
@@ -17,17 +14,10 @@ public class AutoUpdateThread extends Thread {
 
     private volatile boolean finished;
 
-    private Handler handler;
-    private Setting setting;
-    private Weather weather;
-    private Dressing dressing;
+    private MainActivity mainActivity;
 
-    public AutoUpdateThread(Handler handler,
-                            Setting setting, Weather weather, Dressing dressing) {
-        this.handler = handler;
-        this.setting = setting;
-        this.weather = weather;
-        this.dressing = dressing;
+    public AutoUpdateThread(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
     }
 
     public void close() { finished = true; }
@@ -35,8 +25,9 @@ public class AutoUpdateThread extends Thread {
     @Override
     public void run() {
         while (!finished) {
-            if (UpdateService.update(setting, weather, dressing)) {
-                handler.sendEmptyMessage(0);
+            Log.d("AutoThread", "running");
+            if (UpdateService.update(mainActivity)) {
+                mainActivity.getHandler().sendEmptyMessage(0);
             }
 
             try {

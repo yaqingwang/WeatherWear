@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="gender"
+        android:title="@string/pref_title_gender"
+        android:summary="@string/pref_description_gender"
+        android:defaultValue="true"
+        android:switchTextOn="Girl"
+        android:switchTextOff="Boy" />
+
+    <ListPreference
+        android:key="temperature_preference"
+        android:title="@string/pref_title_temperature_preference"
+        android:defaultValue="-1"
+        android:entries="@array/pref_temperature_preference_list_titles"
+        android:entryValues="@array/pref_temperature_preference_list_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+    <ListPreference
+        android:key="dressing_style"
+        android:title="@string/pref_title_dressing_style"
+        android:defaultValue="-1"
+        android:entries="@array/pref_dressing_style_list_titles"
+        android:entryValues="@array/pref_dressing_style_list_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
+</PreferenceScreen>

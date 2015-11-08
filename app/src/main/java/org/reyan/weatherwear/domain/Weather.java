@@ -5,10 +5,14 @@ package org.reyan.weatherwear.domain;
  */
 public class Weather {
 
-    private float temp;
+    private String cityName = "";
+    private double temperature;
 
-    public float getTemp() { return temp; }
-    public void setTemp(float temp) { this.temp = temp; }
+    public String getCityName() { return cityName; }
+    public void setCityName(String cityName) { this.cityName = cityName; }
+
+    public double getTemperature() { return temperature; }
+    public void setTemperature(double temperature) { this.temperature = temperature; }
 
     public static Weather mock() {
         return new Weather();
